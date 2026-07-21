@@ -105,6 +105,10 @@ CONFIGS = {
         # Gate which mechanic demos show in the menu (kill/stage remotely):
         "enabled_demos": ["survivors", "paperio", "crowdgate", "mergeboard",
                           "arcadeidle", "wordle", "sniper", "dashrun",
+                          "rpgcombat", "deckbuilder", "loot", "gacha", "autobattler",
+                          "lanepusher", "farm", "tetris", "g2048", "bubbleshoot",
+                          "blockblast", "flow", "tripeaks", "pushluck", "minesweeper",
+                          "wordsearch", "billiards", "artillery", "stealth", "hillclimb",
                           "snake", "breakout", "asteroids", "sokoban", "flappy",
                           "match3", "sling", "rhythm", "towerdef", "idle"],
         "juice_level": 2,

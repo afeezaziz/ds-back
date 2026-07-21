@@ -18,6 +18,20 @@ GAMES = [
         android_url="",  # fill with Play Store URL after publishing
         priority=100,
     ),
+    dict(
+        game_id="zigroll",
+        name="ZigRoll",
+        tagline="One tap. Don't fall off.",
+        android_url="",
+        priority=90,
+    ),
+    dict(
+        game_id="bridgehop",
+        name="BridgeHop",
+        tagline="Grow the beam. Nail the gap.",
+        android_url="",
+        priority=80,
+    ),
 ]
 
 CONFIGS = {
@@ -43,7 +57,28 @@ CONFIGS = {
         "regrow_on_perfect": 4.0,
         "interstitial_every_n_deaths": 3,
         "crosspromo_enabled": True,
-    }
+    },
+    "zigroll": {
+        "speed": 4.2,            # ball units/sec at start
+        "speed_gain": 0.05,      # added per tile crossed
+        "max_speed": 9.5,
+        "gem_rate": 0.16,        # chance a tile carries a gem
+        "gem_bonus": 5,          # score per gem
+        "drop_margin": 0.22,     # forgiveness at tile edges (bigger = easier)
+        "interstitial_every_n_deaths": 3,
+        "crosspromo_enabled": True,
+    },
+    "bridgehop": {
+        "grow_speed": 5.5,       # beam units/sec while holding
+        "gap_min": 1.2,
+        "gap_max": 4.0,
+        "width_min": 1.0,
+        "width_max": 2.4,
+        "perfect_zone": 0.22,    # half-width of the red center strip
+        "perfect_bonus": 1,      # extra score for a perfect landing
+        "interstitial_every_n_deaths": 3,
+        "crosspromo_enabled": True,
+    },
 }
 
 def main():

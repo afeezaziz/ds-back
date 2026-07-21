@@ -67,6 +67,7 @@ CONFIGS = {
                          "chaos_burst": 1.8},
         },
         # --- shared ---
+        "juice_level": 2,        # 0 off · 1 minimal · 2 full · 3 extra (A/B the feel!)
         "fever_streak": 5,
         "regrow_on_perfect": 4.0,
         "interstitial_every_n_deaths": 3,
@@ -99,6 +100,7 @@ CONFIGS = {
                           "arcadeidle", "wordle", "sniper", "dashrun",
                           "snake", "breakout", "asteroids", "sokoban", "flappy",
                           "match3", "sling", "rhythm", "towerdef", "idle"],
+        "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,
     },

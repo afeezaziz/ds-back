@@ -95,7 +95,9 @@ CONFIGS = {
     },
     "mechlab": {
         # Gate which mechanic demos show in the menu (kill/stage remotely):
-        "enabled_demos": ["snake", "breakout", "asteroids", "sokoban", "flappy",
+        "enabled_demos": ["survivors", "paperio", "crowdgate", "mergeboard",
+                          "arcadeidle", "wordle", "sniper", "dashrun",
+                          "snake", "breakout", "asteroids", "sokoban", "flappy",
                           "match3", "sling", "rhythm", "towerdef", "idle"],
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,

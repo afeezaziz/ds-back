@@ -126,6 +126,21 @@ def test_config_empty_then_seeded(client):
     assert cfg["data"]["base_speed"] == 300.0
 
 
+def test_boards_are_separate_leaderboards(client):
+    """Mechanics-lab requirement: each game mode == its own board."""
+    t = auth(client, device="device-boards-01", name="Modey")["token"]
+    client.post(f"/v1/scores/{GAME}", json={"score": 40, "board": "classic"}, headers=hdr(t))
+    client.post(f"/v1/scores/{GAME}", json={"score": 7, "board": "pendulum"}, headers=hdr(t))
+
+    classic = client.get(f"/v1/leaderboards/{GAME}?board=classic", headers=hdr(t)).json()
+    pendulum = client.get(f"/v1/leaderboards/{GAME}?board=pendulum", headers=hdr(t)).json()
+    assert classic["me"]["score"] == 40
+    assert pendulum["me"]["score"] == 7
+    # The default board ("main") from earlier tests is untouched by mode boards
+    main = client.get(f"/v1/leaderboards/{GAME}", headers=hdr(t)).json()
+    assert main["me"] is None or main["me"]["score"] != 7
+
+
 def test_crosspromo_excludes_self(client):
     from app.db import SessionLocal
     from app.models import GameEntry

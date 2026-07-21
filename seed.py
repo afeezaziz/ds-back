@@ -22,13 +22,25 @@ GAMES = [
 
 CONFIGS = {
     "skystack": {
-        # Tune the live game without shipping an update:
-        "base_speed": 260.0,          # px/sec initial slide speed
-        "speed_per_layer": 6.0,       # speed added per stacked layer
-        "max_speed": 700.0,
-        "perfect_window": 7.0,        # px tolerance for a perfect drop
-        "fever_streak": 5,            # perfects in a row to trigger fever
-        "regrow_on_perfect": 4.0,     # px width regained on perfect
+        # --- mechanics lab ---
+        # Which modes appear in the menu (remove a key to kill a mode remotely):
+        "enabled_modes": ["classic", "pendulum", "pulse", "wind", "rush"],
+        # Per-mode tuning overrides; any key from Stack.gd::_mode_params().
+        "modes": {
+            "classic":  {"base_speed": 260.0, "speed_per_layer": 6.0,
+                         "max_speed": 700.0, "perfect_window": 7.0},
+            "pendulum": {"rope_length": 430.0, "swing_amp": 1.05,
+                         "swing_speed": 2.4, "momentum_factor": 0.9,
+                         "perfect_window": 10.0},
+            "pulse":    {"pulse_speed": 2.6, "pulse_min": 0.35,
+                         "pulse_max": 1.45, "perfect_window": 9.0},
+            "wind":     {"wind_max": 220.0, "perfect_window": 9.0},
+            "rush":     {"base_speed": 300.0, "chaos_flip_chance": 0.4,
+                         "chaos_burst": 1.8},
+        },
+        # --- shared ---
+        "fever_streak": 5,
+        "regrow_on_perfect": 4.0,
         "interstitial_every_n_deaths": 3,
         "crosspromo_enabled": True,
     }

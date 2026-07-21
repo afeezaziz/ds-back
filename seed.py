@@ -39,6 +39,13 @@ GAMES = [
         android_url="",
         priority=70,
     ),
+    dict(
+        game_id="mechlab",
+        name="MechLab",
+        tagline="Every mechanic. One museum.",
+        android_url="",
+        priority=60,
+    ),
 ]
 
 CONFIGS = {
@@ -84,6 +91,13 @@ CONFIGS = {
         "perfect_zone": 0.22,    # half-width of the red center strip
         "perfect_bonus": 1,      # extra score for a perfect landing
         "interstitial_every_n_deaths": 3,
+        "crosspromo_enabled": True,
+    },
+    "mechlab": {
+        # Gate which mechanic demos show in the menu (kill/stage remotely):
+        "enabled_demos": ["snake", "breakout", "asteroids", "sokoban", "flappy",
+                          "match3", "sling", "rhythm", "towerdef", "idle"],
+        "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,
     },
     "openlab": {

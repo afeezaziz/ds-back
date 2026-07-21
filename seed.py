@@ -53,6 +53,13 @@ GAMES = [
         android_url="",
         priority=55,
     ),
+    dict(
+        game_id="deeplab",
+        name="DeepLab",
+        tagline="Deep systems: roguelike, prestige, tactics.",
+        android_url="",
+        priority=50,
+    ),
 ]
 
 CONFIGS = {
@@ -111,6 +118,13 @@ CONFIGS = {
                           "wordsearch", "billiards", "artillery", "stealth", "hillclimb",
                           "snake", "breakout", "asteroids", "sokoban", "flappy",
                           "match3", "sling", "rhythm", "towerdef", "idle"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "deeplab": {
+        "enabled_demos": ["roguerun", "prestige", "basebuild", "tactics",
+                          "bosshell", "citysim"],
         "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,

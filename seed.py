@@ -46,6 +46,13 @@ GAMES = [
         android_url="",
         priority=60,
     ),
+    dict(
+        game_id="mechlab3d",
+        name="MechLab 3D",
+        tagline="20 modern 3D mechanics to play.",
+        android_url="",
+        priority=55,
+    ),
 ]
 
 CONFIGS = {
@@ -100,6 +107,15 @@ CONFIGS = {
                           "arcadeidle", "wordle", "sniper", "dashrun",
                           "snake", "breakout", "asteroids", "sokoban", "flappy",
                           "match3", "sling", "rhythm", "towerdef", "idle"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "mechlab3d": {
+        "enabled_demos": ["runner3d", "helix", "stackball", "holeio", "kart",
+                          "marble", "archero", "crowd3d", "slice3d", "flight",
+                          "parkour", "tumble", "bridgerace", "stackrun", "hoops",
+                          "aquapark", "sword", "wreck", "fpswave", "idle3d"],
         "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,

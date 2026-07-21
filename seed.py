@@ -32,6 +32,13 @@ GAMES = [
         android_url="",
         priority=80,
     ),
+    dict(
+        game_id="openlab",
+        name="OpenLab",
+        tagline="A whole city to mess with.",
+        android_url="",
+        priority=70,
+    ),
 ]
 
 CONFIGS = {
@@ -77,6 +84,17 @@ CONFIGS = {
         "perfect_zone": 0.22,    # half-width of the red center strip
         "perfect_bonus": 1,      # extra score for a perfect landing
         "interstitial_every_n_deaths": 3,
+        "crosspromo_enabled": True,
+    },
+    "openlab": {
+        "npc_count": 14,             # civilians in the city
+        "day_length_s": 150.0,       # full day/night cycle duration
+        "wanted_decay_s": 18.0,      # seconds without offenses to lose the stars
+        "busted_penalty": 50,        # score lost when the cops catch you
+        "mission_reward_deliver": 100,
+        "checkpoint_bonus": 20,
+        "race_complete_bonus": 60,
+        "interstitial_every_n_deaths": 4,
         "crosspromo_enabled": True,
     },
 }

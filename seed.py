@@ -60,6 +60,13 @@ GAMES = [
         android_url="",
         priority=50,
     ),
+    dict(
+        game_id="deeplab3d",
+        name="DeepLab 3D",
+        tagline="Deep 3D systems: raids, survival, mechs.",
+        android_url="",
+        priority=45,
+    ),
 ]
 
 CONFIGS = {
@@ -138,6 +145,14 @@ CONFIGS = {
                           "marble", "archero", "crowd3d", "slice3d", "flight",
                           "parkour", "tumble", "bridgerace", "stackrun", "hoops",
                           "aquapark", "sword", "wreck", "fpswave", "idle3d"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "deeplab3d": {
+        # Deep / systemic 3D mechanics (see game-client/games/deeplab3d).
+        "enabled_demos": ["actionrpg", "fpsarena", "td3d", "racing", "platform3d",
+                          "dogfight", "citybuild3d", "bossraid", "survival3d", "mech"],
         "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,

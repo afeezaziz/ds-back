@@ -123,8 +123,10 @@ CONFIGS = {
         "crosspromo_enabled": True,
     },
     "deeplab": {
-        "enabled_demos": ["roguerun", "prestige", "basebuild", "tactics",
-                          "bosshell", "citysim"],
+        "enabled_demos": ["roguerun", "deckrogue", "surviveevo", "autochess",
+                          "tactics", "prestige", "mergemeta", "basebuild",
+                          "citysim", "marketsim", "mazetd", "bosshell",
+                          "rhythmaction", "narrative", "ragdoll"],
         "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,

@@ -1,0 +1,45 @@
+# Coolify deployment via docker-compose: app + Postgres in one stack.
+# In Coolify: New Resource -> Docker Compose -> point at this repo. Coolify
+# reads this file, builds the app image from the Dockerfile, and runs Postgres
+# alongside it. Set the env vars below in Coolify's UI (or a .env).
+#
+# Alternatively deploy the Dockerfile alone (single service) and attach a
+# Coolify-managed Postgres, then set DATABASE_URL to its connection string.
+
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET:?set a long random secret}
+      DATABASE_URL: postgresql://dream:${POSTGRES_PASSWORD:?set a db password}@db:5432/dreamstudio
+      SEED_ON_START: "1"
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/v1/health').status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dream
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set a db password}
+      POSTGRES_DB: dreamstudio
+    volumes:
+      - dream_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dream -d dreamstudio"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  dream_pgdata:

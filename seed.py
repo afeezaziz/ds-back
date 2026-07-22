@@ -116,6 +116,13 @@ GAMES = [
         android_url="",
         priority=34,
     ),
+    dict(
+        game_id="tentlab3d",
+        name="TentLab 3D",
+        tagline="Tentpole gaps: rhythm, Fall Guys, factory, sports, souls.",
+        android_url="",
+        priority=33,
+    ),
 ]
 
 CONFIGS = {
@@ -247,6 +254,15 @@ CONFIGS = {
     },
     "tablelab3d": {
         "enabled_demos": ["cardbattler", "autobattler", "partygames", "physicspuzzle"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "tentlab3d": {
+        # Tentpole flagship-gap genres (see game-client/games/tentlab3d).
+        "enabled_demos": ["rhythm", "partyroyale", "factory", "soccer", "basketball",
+                          "pinball", "portal", "perspective", "lootarpg", "souls",
+                          "tactics", "photomode"],
         "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,

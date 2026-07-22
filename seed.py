@@ -67,6 +67,13 @@ GAMES = [
         android_url="",
         priority=45,
     ),
+    dict(
+        game_id="flaglab3d",
+        name="FlagLab 3D",
+        tagline="Flagship 3D genres: MOBA, battle royale, open-world.",
+        android_url="",
+        priority=40,
+    ),
 ]
 
 CONFIGS = {
@@ -153,6 +160,14 @@ CONFIGS = {
         # Deep / systemic 3D mechanics (see game-client/games/deeplab3d).
         "enabled_demos": ["actionrpg", "fpsarena", "td3d", "racing", "platform3d",
                           "dogfight", "citybuild3d", "bossraid", "survival3d", "mech"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "flaglab3d": {
+        # Flagship 3D genres (see game-client/games/flaglab3d).
+        "enabled_demos": ["moba", "battleroyale", "heist3d", "voxel", "covershoot",
+                          "stealth", "musou", "grapple", "rocketcar", "rts"],
         "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,

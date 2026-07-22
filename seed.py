@@ -74,6 +74,48 @@ GAMES = [
         android_url="",
         priority=40,
     ),
+    dict(
+        game_id="shootlab3d",
+        name="ShootLab 3D",
+        tagline="Shooter genres: extraction, hero, rail, horde, FPS-TD.",
+        android_url="",
+        priority=39,
+    ),
+    dict(
+        game_id="ridelab3d",
+        name="RideLab 3D",
+        tagline="Vehicles: delivery, tanks, 6DOF space, derby.",
+        android_url="",
+        priority=38,
+    ),
+    dict(
+        game_id="sportlab3d",
+        name="SportLab 3D",
+        tagline="Sports & physics: golf, pool, skate, fishing, boxing.",
+        android_url="",
+        priority=37,
+    ),
+    dict(
+        game_id="questlab3d",
+        name="QuestLab 3D",
+        tagline="RPG/adventure: JRPG, stealth, dungeons, immersive sim.",
+        android_url="",
+        priority=36,
+    ),
+    dict(
+        game_id="simlab3d",
+        name="SimLab 3D",
+        tagline="Sim & management: farm, cooking, tycoon, colony, tamer.",
+        android_url="",
+        priority=35,
+    ),
+    dict(
+        game_id="tablelab3d",
+        name="TableLab 3D",
+        tagline="Board/card/party: card-battler, auto-battler, puzzles.",
+        android_url="",
+        priority=34,
+    ),
 ]
 
 CONFIGS = {
@@ -168,6 +210,43 @@ CONFIGS = {
         # Flagship 3D genres (see game-client/games/flaglab3d).
         "enabled_demos": ["moba", "battleroyale", "heist3d", "voxel", "covershoot",
                           "stealth", "musou", "grapple", "rocketcar", "rts"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "shootlab3d": {
+        "enabled_demos": ["extraction", "hero", "onrails", "horde", "fpstd"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "ridelab3d": {
+        "enabled_demos": ["trucksim", "tankbattle", "spaceflight", "derby"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "sportlab3d": {
+        "enabled_demos": ["golf", "pool", "bowling", "skate", "snowsurf", "fishing", "boxing"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "questlab3d": {
+        "enabled_demos": ["jrpg", "squadbreach", "zeldadungeon", "metroidvania",
+                          "survivalhorror", "immersivesim", "dungeoncrawl"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "simlab3d": {
+        "enabled_demos": ["farmlife", "cooking", "tycoon", "godcolony", "monstertamer"],
+        "juice_level": 2,
+        "interstitial_every_n_deaths": 5,
+        "crosspromo_enabled": True,
+    },
+    "tablelab3d": {
+        "enabled_demos": ["cardbattler", "autobattler", "partygames", "physicspuzzle"],
         "juice_level": 2,
         "interstitial_every_n_deaths": 5,
         "crosspromo_enabled": True,
